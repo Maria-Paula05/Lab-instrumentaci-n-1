@@ -102,6 +102,8 @@ d.Materiales
 e.Adquisición de la señal
 
 El sensor de CO₂ se ubicó en una mascarilla de nebulización pediátrica (cerca a nariz/boca) para capturar el aire espirado.
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/7cb38f12-a0be-430a-8295-4f74ea02ebc1" />
+Figura 1: circuito que adquiere señal capnográfica
 
 El sensor entrega un voltaje proporcional a la concentración de CO₂, el cual fue digitalizado mediante el ADC del Arduino y enviado por comunicación serial al computador.
 
@@ -138,7 +140,7 @@ Las señales obtenidas fueron procesadas en MATLAB para su visualización en el 
 •Señal respiratoria en reposo
 <img width="1391" height="790" alt="image" src="https://github.com/user-attachments/assets/4b0ad83b-abfe-4e73-b335-a0ec1cd33121" />
 
-Figura 1. Señal capnográfica en reposo
+Figura 2. Señal capnográfica en reposo
 
 En la señal se observan ciclos respiratorios periódicos correspondientes a la ventilación automática.
 El periodo promedio entre ciclos fue de:
