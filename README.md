@@ -1,4 +1,4 @@
-# Lab-instrumentaci-n-1
+# Laboratorio Numero 1 Instrumentación Biomédica y Biosensores
 # Monitoreo del patrón y frecuencia respiratoria mediante capnografía
 Presentado por: Jhonathan David Guevara 
                 Juan Pablo Díaz
