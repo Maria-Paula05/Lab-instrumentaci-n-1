@@ -153,9 +153,9 @@ FR reposo= 60/T reposo=       respiraciones/min
 
 •Señal respiratoria durante verbalización
 
+<img width="1373" height="815" alt="image" src="https://github.com/user-attachments/assets/311c4dbc-eb18-4062-9b76-8f347b8fea58" />
 
-
-Figura 2. Señal capnográfica durante habla.
+Figura 3. Señal capnográfica durante habla.
 Se observan variaciones en la amplitud y periodicidad asociadas al control voluntario de la espiración durante la fonación.
 
 El periodo promedio fue:
@@ -164,6 +164,10 @@ T habla =       s
 
 FR habla=60/Thabla=                respiraciones/min
 
+Dominio de la frecuencia
+<img width="1367" height="740" alt="image" src="https://github.com/user-attachments/assets/55894cef-0e9b-4f6e-8042-8fc4f19a1a96" />
+
+Figura 4. Espectro de frecuencia durante reposo
 
 g.Análisis de Resultados
 
