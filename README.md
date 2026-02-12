@@ -1,8 +1,8 @@
 # Laboratorio Numero 1 Instrumentación Biomédica y Biosensores
 # Monitoreo del patrón y frecuencia respiratoria mediante capnografía
-Presentado por: Jhonathan David Guevara 
-                Juan Pablo Díaz
-                María Paula Fernández 
+Presentado por: Jhonathan David Guevara,
+                ,Juan Pablo Díaz
+                ,María Paula Fernández 
                 
 a.Introducción:
 
