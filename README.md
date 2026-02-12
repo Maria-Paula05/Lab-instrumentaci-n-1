@@ -142,9 +142,11 @@ Figura 1. Señal capnográfica en reposo
 
 En la señal se observan ciclos respiratorios periódicos correspondientes a la ventilación automática.
 El periodo promedio entre ciclos fue de:
+
 T reposo =    s
 
 Por tanto la frecuencia respiratoria calculada fue de:
+
 FR reposo= 60/T reposo=       respiraciones/min
 
 •Señal respiratoria durante verbalización
@@ -155,7 +157,9 @@ Figura 2. Señal capnográfica durante habla.
 Se observan variaciones en la amplitud y periodicidad asociadas al control voluntario de la espiración durante la fonación.
 
 El periodo promedio fue:
+
 T habla =       s
+
 FR habla=60/Thabla=                respiraciones/min
 
 
