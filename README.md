@@ -16,13 +16,19 @@ El objetivo del presente laboratorio fue caracterizar el funcionamiento de un se
 
 b.Objetivos:
 
-Objetivo General: Evaluar la influencia del habla o verbalización sobre el
+Objetivo General: 
+
+Evaluar la influencia del habla o verbalización sobre el
 patrón respiratorio.
+
 Objetivos Específicos
+
 • Reconocer las variables físicas principalmente involucradas en el proceso
 respiratorio.
+
 • Desarrollar un sistema que extraiga el patrón respiratorio y la frecuencia
 respiratoria.
+
 • Identificar tareas de verbalización a partir del patrón y/o la frecuencia
 respiratoria.
 
