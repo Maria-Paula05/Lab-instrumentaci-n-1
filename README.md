@@ -25,7 +25,7 @@ respiratoria.
 respiratoria.
 
 c.Marco teórico
-Fisiología de la respiración
+•Fisiología de la respiración
 
 La respiración es el proceso fisiológico mediante el cual el organismo intercambia gases con el medio ambiente, permitiendo la entrada de oxígeno (O₂) y la eliminación de dióxido de carbono (CO₂). Este proceso comprende tres etapas: ventilación pulmonar, difusión alveolocapilar y transporte de gases en la sangre [1].
 
@@ -35,7 +35,7 @@ El intercambio gaseoso se realiza en los alvéolos pulmonares por difusión a fa
 
 En adultos sanos en reposo, la frecuencia respiratoria normal se encuentra entre 12 y 20 respiraciones por minuto [3].
 
-2.2 Control de la respiración
+•Control de la respiración
 
 El ritmo respiratorio está controlado automáticamente por centros respiratorios localizados en el bulbo raquídeo y la protuberancia. Estos centros ajustan la ventilación en respuesta a cambios químicos en la sangre, principalmente la concentración de CO₂ y el pH [2].
 
@@ -43,7 +43,7 @@ Los quimiorreceptores centrales detectan variaciones del pH del líquido cefalor
 
 Aunque es un proceso automático, la respiración puede modificarse voluntariamente por control cortical durante actividades como el habla, canto o apnea voluntaria [4].
 
-2.3 Mecánica y patrón respiratorio
+•Mecánica y patrón respiratorio
 
 El ciclo respiratorio consta de dos fases:
 
@@ -55,23 +55,23 @@ En condiciones normales, la espiración dura ligeramente más que la inspiració
 
 El patrón respiratorio puede caracterizarse mediante la frecuencia respiratoria, amplitud ventilatoria y relación inspiración-espiración [3].
 
-2.4 Capnografía
+•Capnografía
 
 La capnografía es una técnica de monitoreo no invasiva que mide la presión parcial o concentración de CO₂ en el aire espirado en función del tiempo [5]. El valor máximo al final de la espiración se denomina dióxido de carbono al final de la espiración (EtCO₂) y refleja indirectamente la ventilación alveolar [5].
 
 El capnograma presenta cuatro fases:
 
-Aire del espacio muerto sin CO₂
+1.Aire del espacio muerto sin CO₂
 
-Mezcla de aire alveolar
+2.Mezcla de aire alveolar
 
-Meseta alveolar
+3.Meseta alveolar
 
-Inspiración con caída brusca del CO₂
+4.Inspiración con caída brusca del CO₂
 
 Cada ciclo corresponde a una respiración, por lo que la frecuencia respiratoria puede calcularse contando los ciclos por unidad de tiempo [5].
 
-2.5 Relación entre respiración y habla
+•Relación entre respiración y habla
 
 Durante el reposo la respiración es automática y rítmica; sin embargo, durante el habla interviene el control voluntario cortical, el cual modifica la ventilación para producir fonación. Esto genera espiraciones prolongadas e inspiraciones rápidas, produciendo irregularidades en el patrón respiratorio [4].
 
@@ -80,19 +80,19 @@ Por ello, el análisis temporal de la señal capnográfica permite diferenciar e
 
 d.MATERIALES
 
-Sensor de capnografía (CO₂)
+•Sensor de capnografía (CO₂)
 
-Arduino LEONARDO
+•Arduino UNO
 
-Protoboard y cables
+•Protoboard y cables
 
-Computador con MATLAB
+•Computador con MATLAB
 
-Serial Plotter Arduino
+•Serial Plotter Arduino
 
 e.Adquisición de la señal
 
-El sensor de CO₂ se ubicó en ___ (cerca a nariz/boca) para capturar el aire espirado.
+El sensor de CO₂ se ubicó en una mascarilla de nebulización pediátrica (cerca a nariz/boca) para capturar el aire espirado.
 
 El sensor entrega un voltaje proporcional a la concentración de CO₂, el cual fue digitalizado mediante el ADC del Arduino y enviado por comunicación serial al computador.
 
@@ -100,15 +100,15 @@ El sensor entrega un voltaje proporcional a la concentración de CO₂, el cual 
 
 Se verificó la señal utilizando el Serial Plotter en dos condiciones:
 
-Reposo
+•Reposo
 
-Lectura en voz alta
+•Lectura en voz alta/charla
 
 - Adquisición en MATLAB
 
-Se desarrolló un código para captura temporizada de 30 segundos.
+Se desarrolló un código para captura temporizada de 60 segundos.
 
-Frecuencia de muestreo: ___ Hz
+Frecuencia de muestreo: 100 Hz
 
 Se guardaron los archivos:
 
@@ -116,16 +116,84 @@ reposo.mat
 
 habla.mat
 
--Procesamiento
-
-Se aplicó un filtro pasa-bajas para eliminar ruido de alta frecuencia.
-
-Frecuencia de corte: ___ Hz
-
-Posteriormente se obtuvo el espectro mediante FFT para hallar la frecuencia dominante.
-
 f.Resultados
+
+Para la evaluación del sistema se adquirieron señales capnográficas durante 60 segundos en dos condiciones fisiológicas:
+
+•Respiración en reposo
+
+•Respiración durante lectura en voz alta/charla
+
+Las señales obtenidas fueron procesadas en MATLAB para su visualización en el dominio del tiempo y de la frecuencia.
+
+•Señal respiratoria en reposo
+<img width="1391" height="790" alt="image" src="https://github.com/user-attachments/assets/4b0ad83b-abfe-4e73-b335-a0ec1cd33121" />
+
+Figura 1. Señal capnográfica en reposo
+
+En la señal se observan ciclos respiratorios periódicos correspondientes a la ventilación automática.
+El periodo promedio entre ciclos fue de:
+T reposo =    s
+
+Por tanto la frecuencia respiratoria calculada fue de:
+FR reposo= 60/T reposo=       respiraciones/min
+
+•Señal respiratoria durante verbalización
+
+
+
+Figura 2. Señal capnográfica durante habla.
+Se observan variaciones en la amplitud y periodicidad asociadas al control voluntario de la espiración durante la fonación.
+
+El periodo promedio fue:
+T habla =       s
+FR habla=60/Thabla=                respiraciones/min
 g.Análisis de Resultados
+El sistema implementado permitió adquirir la señal capnográfica bajo dos condiciones fisiológicas: respiración en reposo y durante verbalización. La señal obtenida representa la variación de la concentración de CO₂ espirado a lo largo del tiempo, por lo que cada ciclo corresponde a una respiración.
+
+En condición de reposo se espera un patrón respiratorio relativamente periódico, con ciclos regulares debido al control automático ejercido por los centros respiratorios del bulbo raquídeo. En este estado la ventilación responde principalmente a la regulación química del CO₂ sanguíneo, manteniendo una frecuencia respiratoria estable.
+
+Durante la verbalización el patrón respiratorio cambia notablemente, ya que la respiración deja de ser completamente automática y pasa a estar parcialmente controlada por el sistema nervioso central superior (control cortical). La producción de voz requiere prolongar la espiración para permitir la fonación, generando inspiraciones más rápidas e irregulares. Como consecuencia, la señal presenta variaciones en amplitud, duración de los ciclos y periodicidad.
+
+Adicionalmente, en el dominio de la frecuencia se espera observar que la señal en reposo presenta un pico dominante claramente definido, mientras que durante el habla el espectro se dispersa debido a la irregularidad temporal del patrón ventilatorio.
+
+El sistema construido permite estimar la frecuencia respiratoria de manera adecuada; sin embargo, su precisión depende de la correcta ubicación del sensor y de la reducción de artefactos por movimiento o ruido ambiental
 h.Preguntas
+¿Son los patrones respiratorios y frecuencias respiratorias iguales o diferentes en cada caso? ¿A qué se debe esto?
+Los patrones respiratorios y la frecuencia respiratoria son diferentes entre reposo y verbalización.
+
+En reposo la respiración es automática y rítmica, regulada por los centros respiratorios del tronco encefálico en respuesta a la concentración de CO₂ en sangre, por lo que el patrón presenta periodicidad constante.
+
+Durante el habla la respiración se vuelve parcialmente voluntaria debido al control cortical necesario para la fonación. La espiración se prolonga para producir sonido y la inspiración se realiza de manera rápida y variable. Esto produce irregularidades en el patrón respiratorio y cambios en la frecuencia respiratoria.
+
+Por tanto, la diferencia se debe a que la respiración pasa de un control químico automático a un control neuromuscular voluntario.
+¿Cuáles serían las ventajas y desventajas de emplear múltiples sensores para el monitoreo del proceso respiratorio?
+Ventajas
+
+Mayor precisión en la medición
+
+Reducción de ruido y artefactos
+
+Posibilidad de medir varias variables fisiológicas simultáneamente (flujo, volumen, CO₂, movimiento torácico)
+
+Mayor confiabilidad del sistema mediante redundancia
+
+Detección más temprana de alteraciones respiratorias
+
+Desventajas
+
+Mayor costo del sistema
+
+Mayor complejidad electrónica y computacional
+
+Mayor incomodidad para el paciente
+
+Mayor consumo energético
+
+Mayor dificultad de calibración
+
+Razón fisiológica
+
+Cada sensor mide una variable diferente del proceso respiratorio (ventilación mecánica, intercambio gaseoso o movimiento torácico). La respiración es un fenómeno multifactorial, por lo que un solo sensor no describe completamente el estado respiratorio; sin embargo, integrar varios sensores aumenta la exactitud a costa de complejidad.
 i.Conclusiones
 j.Referencias
