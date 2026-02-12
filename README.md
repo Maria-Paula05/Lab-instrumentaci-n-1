@@ -148,7 +148,9 @@ Se observan variaciones en la amplitud y periodicidad asociadas al control volun
 El periodo promedio fue:
 T habla =       s
 FR habla=60/Thabla=                respiraciones/min
+
 g.Análisis de Resultados
+
 El sistema implementado permitió adquirir la señal capnográfica bajo dos condiciones fisiológicas: respiración en reposo y durante verbalización. La señal obtenida representa la variación de la concentración de CO₂ espirado a lo largo del tiempo, por lo que cada ciclo corresponde a una respiración.
 
 En condición de reposo se espera un patrón respiratorio relativamente periódico, con ciclos regulares debido al control automático ejercido por los centros respiratorios del bulbo raquídeo. En este estado la ventilación responde principalmente a la regulación química del CO₂ sanguíneo, manteniendo una frecuencia respiratoria estable.
@@ -157,9 +159,12 @@ Durante la verbalización el patrón respiratorio cambia notablemente, ya que la
 
 Adicionalmente, en el dominio de la frecuencia se espera observar que la señal en reposo presenta un pico dominante claramente definido, mientras que durante el habla el espectro se dispersa debido a la irregularidad temporal del patrón ventilatorio.
 
-El sistema construido permite estimar la frecuencia respiratoria de manera adecuada; sin embargo, su precisión depende de la correcta ubicación del sensor y de la reducción de artefactos por movimiento o ruido ambiental
+El sistema construido permite estimar la frecuencia respiratoria de manera adecuada; sin embargo, su precisión depende de la correcta ubicación del sensor y de la reducción de artefactos por movimiento o ruido ambiental.
+
 h.Preguntas
-¿Son los patrones respiratorios y frecuencias respiratorias iguales o diferentes en cada caso? ¿A qué se debe esto?
+
+1.¿Son los patrones respiratorios y frecuencias respiratorias iguales o diferentes en cada caso? ¿A qué se debe esto?
+
 Los patrones respiratorios y la frecuencia respiratoria son diferentes entre reposo y verbalización.
 
 En reposo la respiración es automática y rítmica, regulada por los centros respiratorios del tronco encefálico en respuesta a la concentración de CO₂ en sangre, por lo que el patrón presenta periodicidad constante.
@@ -167,33 +172,62 @@ En reposo la respiración es automática y rítmica, regulada por los centros re
 Durante el habla la respiración se vuelve parcialmente voluntaria debido al control cortical necesario para la fonación. La espiración se prolonga para producir sonido y la inspiración se realiza de manera rápida y variable. Esto produce irregularidades en el patrón respiratorio y cambios en la frecuencia respiratoria.
 
 Por tanto, la diferencia se debe a que la respiración pasa de un control químico automático a un control neuromuscular voluntario.
-¿Cuáles serían las ventajas y desventajas de emplear múltiples sensores para el monitoreo del proceso respiratorio?
-Ventajas
 
-Mayor precisión en la medición
+2.¿Cuáles serían las ventajas y desventajas de emplear múltiples sensores para el monitoreo del proceso respiratorio?
 
-Reducción de ruido y artefactos
+•Ventajas
 
-Posibilidad de medir varias variables fisiológicas simultáneamente (flujo, volumen, CO₂, movimiento torácico)
+-Mayor precisión en la medición
 
-Mayor confiabilidad del sistema mediante redundancia
+-Reducción de ruido y artefactos
 
-Detección más temprana de alteraciones respiratorias
+-Posibilidad de medir varias variables fisiológicas simultáneamente (flujo, volumen, CO₂, movimiento torácico)
 
-Desventajas
+-Mayor confiabilidad del sistema mediante redundancia
 
-Mayor costo del sistema
+-Detección más temprana de alteraciones respiratorias
 
-Mayor complejidad electrónica y computacional
+•Desventajas
 
-Mayor incomodidad para el paciente
+-Mayor costo del sistema
 
-Mayor consumo energético
+-Mayor complejidad electrónica y computacional
 
-Mayor dificultad de calibración
+-Mayor incomodidad para el paciente
 
-Razón fisiológica
+-Mayor consumo energético
+
+-Mayor dificultad de calibración
+
+•Razón fisiológica
 
 Cada sensor mide una variable diferente del proceso respiratorio (ventilación mecánica, intercambio gaseoso o movimiento torácico). La respiración es un fenómeno multifactorial, por lo que un solo sensor no describe completamente el estado respiratorio; sin embargo, integrar varios sensores aumenta la exactitud a costa de complejidad.
+
 i.Conclusiones
+
+•La señal capnográfica permite identificar el ciclo respiratorio porque el CO₂ espirado refleja directamente la ventilación alveolar, la cual depende del intercambio gaseoso pulmonar.
+
+•En reposo el patrón respiratorio es regular debido al control automático de los centros respiratorios bulbares regulados principalmente por la concentración de CO₂ sanguíneo.
+
+•Durante la verbalización la respiración se altera fisiológicamente, ya que el control cortical voluntario prolonga la espiración para la fonación, generando irregularidad en el patrón y cambios en la frecuencia respiratoria.
+
+•La medición de CO₂ espirado constituye una variable adecuada para el monitoreo respiratorio porque se relaciona directamente con la ventilación pulmonar y el equilibrio ácido-base.
+
+•El sistema implementado permite estimar la frecuencia respiratoria, aunque su exactitud depende de la correcta adquisición de la señal y de la reducción de artefactos externos.
+
 j.Referencias
+
+[1] J. E. Hall, Guyton and Hall Textbook of Medical Physiology, 14th ed. Elsevier, 2021.
+https://www.ncbi.nlm.nih.gov/books/NBK541028/
+
+[2] B. R. West, Respiratory Physiology: The Essentials, 10th ed. Wolters Kluwer, 2016.
+https://www.ncbi.nlm.nih.gov/books/NBK482268/
+
+[3] Cleveland Clinic, “Respiratory Rate.”
+https://my.clevelandclinic.org/health/articles/10881-vital-signs
+
+[4] Kent, R. D., “Speech breathing physiology.”
+https://www.ncbi.nlm.nih.gov/books/NBK279539/
+
+[5] StatPearls, “Capnography.”
+https://www.ncbi.nlm.nih.gov/books/NBK539754/
