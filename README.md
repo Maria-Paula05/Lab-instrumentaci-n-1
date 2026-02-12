@@ -5,6 +5,7 @@ Presentado por: Jhonathan David Guevara
                 María Paula Fernández 
                 
 a.Introducción:
+
 La frecuencia respiratoria (FR) es uno de los signos vitales fundamentales utilizados en la evaluación clínica del estado fisiológico de un paciente. Representa el número de ciclos respiratorios por minuto y refleja directamente la actividad del sistema respiratorio y el balance ácido-base del organismo. Alteraciones en la FR suelen ser uno de los primeros indicadores de deterioro clínico, incluso antes de cambios en la frecuencia cardíaca o la presión arterial .
 
 En el ámbito hospitalario, la medición manual de la frecuencia respiratoria presenta baja confiabilidad debido a errores humanos, variabilidad del observador y monitoreo discontinuo. Por esta razón, en la ingeniería biomédica se han desarrollado sistemas automáticos de monitorización basados en sensores fisiológicos, entre ellos la capnografía, la cual permite evaluar la ventilación pulmonar mediante la medición del dióxido de carbono (CO₂) exhalado .
@@ -14,6 +15,7 @@ La capnografía no solo permite obtener la frecuencia respiratoria, sino tambié
 El objetivo del presente laboratorio fue caracterizar el funcionamiento de un sensor de capnografía con el fin de analizar la señal respiratoria obtenida y establecer las bases para la medición automática de la frecuencia respiratoria.
 
 b.Objetivos:
+
 Objetivo General: Evaluar la influencia del habla o verbalización sobre el
 patrón respiratorio.
 Objetivos Específicos
@@ -25,6 +27,7 @@ respiratoria.
 respiratoria.
 
 c.Marco teórico
+
 •Fisiología de la respiración
 
 La respiración es el proceso fisiológico mediante el cual el organismo intercambia gases con el medio ambiente, permitiendo la entrada de oxígeno (O₂) y la eliminación de dióxido de carbono (CO₂). Este proceso comprende tres etapas: ventilación pulmonar, difusión alveolocapilar y transporte de gases en la sangre [1].
@@ -78,7 +81,7 @@ Durante el reposo la respiración es automática y rítmica; sin embargo, durant
 Por ello, el análisis temporal de la señal capnográfica permite diferenciar estados fisiológicos como reposo y verbalización.
 
 
-d.MATERIALES
+d.Materiales
 
 •Sensor de capnografía (CO₂)
 
@@ -116,7 +119,7 @@ reposo.mat
 
 habla.mat
 
-f.Resultados
+f.Resultados:
 
 Para la evaluación del sistema se adquirieron señales capnográficas durante 60 segundos en dos condiciones fisiológicas:
 
@@ -148,6 +151,7 @@ Se observan variaciones en la amplitud y periodicidad asociadas al control volun
 El periodo promedio fue:
 T habla =       s
 FR habla=60/Thabla=                respiraciones/min
+
 
 g.Análisis de Resultados
 
