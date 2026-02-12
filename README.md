@@ -1,6 +1,7 @@
 # Lab-instrumentaci-n-1
 # Monitoreo del patrón y frecuencia respiratoria mediante capnografía
-Presentado por: Jhonathan David Guevara
+Presentado por: Jhonathan David Guevara 
+
                 Juan Pablo Díaz
                 María Paula Fernández 
                 
