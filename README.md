@@ -119,17 +119,44 @@ Se verificó la señal utilizando el Serial Plotter en dos condiciones:
 
 Se desarrolló un código para captura temporizada de 60 segundos.
 
-Frecuencia de muestreo: 100 Hz
+-Procesamiento digital de la señal
 
-Se guardaron los archivos:
+La señal proveniente del sensor de capnografía fue adquirida mediante un microcontrolador Arduino a una frecuencia de muestreo de 100 Hz. Posteriormente fue procesada en MATLAB mediante una interfaz gráfica desarrollada específicamente para el análisis respiratorio.
 
-reposo.mat
+El algoritmo implementado realiza las siguientes etapas:
 
-habla.mat
+•Filtrado pasabajo (fc = 3 Hz)
+Se aplicó un filtro digital exponencial para eliminar ruido de alta frecuencia no fisiológico (movimiento, vibración, interferencia eléctrica), conservando únicamente la banda respiratoria (0.1 – 0.5 Hz).
+
+•Estimación dinámica de la línea base
+Se calculó una línea base adaptativa mediante promedio exponencial para compensar la deriva térmica del sensor de CO₂ y variaciones lentas del aire ambiente.
+
+•Amplificación digital de la señal
+La señal fue amplificada digitalmente para mejorar la relación señal-ruido y facilitar la detección de ciclos respiratorios.
+
+•Detección automática de respiraciones (detección de picos)
+Se implementó un algoritmo de doble umbral con histéresis:
+
+Umbral bajo → detecta inicio de espiración
+
+Umbral alto → rearme del sistema
+
+Esto evita falsas detecciones por ruido.
+
+Cálculo de frecuencia respiratoria
+
+𝐹𝑅=60/Periodo respiratorio promedio
+​
+donde el periodo corresponde al tiempo entre espiraciones consecutivas detectadas.
+
+•Análisis espectral (FFT)
+Se realizó la Transformada Rápida de Fourier para identificar la frecuencia dominante respiratoria.
+
+El código completo del sistema de adquisición y procesamiento fue desarrollado en MATLAB y se presenta en el Anexo A.
 
 f.Resultados:
 
-Para la evaluación del sistema se adquirieron señales capnográficas durante 60 segundos en dos condiciones fisiológicas:
+Para la evaluación del sistema se adquirieron señales capnográficas durante el tiempo que escoja el usuario, este se mide en segundos en dos condiciones fisiológicas:
 
 •Respiración en reposo
 
@@ -138,18 +165,26 @@ Para la evaluación del sistema se adquirieron señales capnográficas durante 6
 Las señales obtenidas fueron procesadas en MATLAB para su visualización en el dominio del tiempo y de la frecuencia.
 
 •Señal respiratoria en reposo
+
 <img width="1391" height="790" alt="image" src="https://github.com/user-attachments/assets/4b0ad83b-abfe-4e73-b335-a0ec1cd33121" />
 
 Figura 2. Señal capnográfica en reposo
 
-En la señal se observan ciclos respiratorios periódicos correspondientes a la ventilación automática.
-El periodo promedio entre ciclos fue de:
+A partir de la señal de capnografía obtenida se identificaron los ciclos respiratorios midiendo el tiempo entre eventos consecutivos equivalentes de la onda (fase espiratoria). El periodo respiratorio promedio fue aproximadamente:
 
-T reposo =    s
+𝑇≈
+6.7𝑠
+T≈6.7 s
 
-Por tanto la frecuencia respiratoria calculada fue de:
+La frecuencia respiratoria se calculó mediante:
 
-FR reposo= 60/T reposo=       respiraciones/min
+𝐹𝑅=60/T promedio
+
+obteniéndose:
+
+FR≈9 respiraciones/min
+
+Este valor corresponde a una respiración lenta (bradipnea leve), compatible con un estado de reposo profundo durante la medición.
 
 •Señal respiratoria durante verbalización
 
@@ -157,17 +192,33 @@ FR reposo= 60/T reposo=       respiraciones/min
 
 Figura 3. Señal capnográfica durante habla.
 Se observan variaciones en la amplitud y periodicidad asociadas al control voluntario de la espiración durante la fonación.
+En la condición de habla la señal presentó irregularidad en la duración de los ciclos respiratorios debido a la modulación voluntaria de la ventilación para la fonación. El periodo respiratorio promedio fue:
 
-El periodo promedio fue:
+𝑇≈6.3𝑠
 
-T habla =       s
+y la frecuencia respiratoria:
 
-FR habla=60/Thabla=                respiraciones/min
+𝐹𝑅≈10 𝑟𝑒𝑠𝑝𝑖𝑟𝑎𝑐i𝑜𝑛𝑒𝑠/𝑚𝑖𝑛
 
-Dominio de la frecuencia
+
+Se observa variabilidad entre ciclos respiratorios, característica fisiológica del habla, donde la espiración se prolonga para permitir la producción de sonido y la inspiración ocurre de forma rápida entre frases.
+
+Cuando hablamos:
+
+-La espiración se vuelve controlada por músculos laríngeos
+
+-El cerebro inhibe el centro respiratorio automático
+
+-La respiración deja de ser rítmica
+
+-Aparece variabilidad temporal
+
+•Dominio de la frecuencia
 <img width="1367" height="740" alt="image" src="https://github.com/user-attachments/assets/55894cef-0e9b-4f6e-8042-8fc4f19a1a96" />
 
 Figura 4. Espectro de frecuencia durante reposo
+
+El análisis en frecuencia de la señal de capnografía mostró un pico dominante alrededor de 0.2 Hz. Esta componente corresponde al ciclo respiratorio principal del sujeto, ya que la ventilación pulmonar es un fenómeno periódico de baja frecuencia.
 
 g.Análisis de Resultados
 
