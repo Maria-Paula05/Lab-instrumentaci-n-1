@@ -174,7 +174,6 @@ A partir de la señal de capnografía obtenida se identificaron los ciclos respi
 
 𝑇≈
 6.7𝑠
-T≈6.7 s
 
 La frecuencia respiratoria se calculó mediante:
 
